@@ -68,6 +68,14 @@ public Ventana() {
 	                otroBtn.setBounds(x, y, w, h);
 	                otroBtn.setBackground(new Color(r, g, b));
 	               
+	                otroBtn.addActionListener(new ActionListener() {
+	                    @Override
+	                    public void actionPerformed(ActionEvent e) {
+	                        JOptionPane.showMessageDialog(null, r + "," + g + "," + b, "Codigo del color",
+	                                JOptionPane.ERROR_MESSAGE);
+	                    }
+	                });
+	                
 	                pnlBotones.add(otroBtn);
 	                getContentPane().repaint();
 	                getContentPane().revalidate();
