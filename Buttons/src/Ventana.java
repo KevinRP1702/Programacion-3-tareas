@@ -73,8 +73,12 @@ public Ventana() {
 	                otroBtn.addActionListener(new ActionListener() {
 	                    @Override
 	                    public void actionPerformed(ActionEvent e) {
-	                        JOptionPane.showMessageDialog(null, r + "," + g + "," + b, "Codigo del color",
-	                                JOptionPane.ERROR_MESSAGE);
+	                    	JButton yo = ((JButton) e.getSource());
+							pnlBotones.remove(yo);
+							
+							getContentPane().repaint();
+//	                        JOptionPane.showMessageDialog(null, r + "," + g + "," + b, "Codigo del color",
+//	                                JOptionPane.ERROR_MESSAGE);
 	                    }
 	                });
 	                
