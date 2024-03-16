@@ -3,6 +3,8 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Random;
@@ -16,7 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 
-public class Ventana extends JFrame implements MouseListener{
+public class Ventana extends JFrame implements MouseListener, KeyListener{
 JPanel pnlBotones = new JPanel();
 public Ventana() {
 
@@ -33,6 +35,7 @@ public Ventana() {
 
 			this.setLayout(null);
 			addMouseListener(this);
+			addKeyListener(this);
 			this.IniciarComponentes();
 		}
 
@@ -87,6 +90,7 @@ public Ventana() {
 	                getContentPane().revalidate();
 	            }
 	        });
+	        btnClickMe.setFocusable(false);
 	}
 
 	@Override
@@ -121,6 +125,8 @@ public Ventana() {
              }
         });
 		pnlBotones.add(otroBtn);
+		otroBtn.setFocusable(false);
+		
 		getContentPane().repaint();
 	}
 
@@ -144,6 +150,27 @@ public Ventana() {
 
 	@Override
 	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getKeyCode() == 8) {
+			pnlBotones.removeAll();
+			getContentPane().repaint();
+		}
+	}
+
+	@Override
+	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
