@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -166,6 +167,18 @@ public Ventana() {
 		if(e.getKeyCode() == 8) {
 			pnlBotones.removeAll();
 			getContentPane().repaint();
+		}
+		if(e.getKeyCode() == 87) {
+			Component[] elementos = pnlBotones.getComponents();
+			for(int i = 0; i <elementos.length; i++) {
+				if(elementos[i].getClass().toString().equals("class javax.swing.JButton")) {
+					JButton btn = ((JButton) elementos[i]);
+					
+					btn.setSize(btn.getWidth() + 10, btn.getHeight() + 10);
+					getContentPane().repaint();
+					getContentPane().revalidate();
+				}
+			}
 		}
 	}
 
