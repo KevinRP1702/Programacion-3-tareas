@@ -168,18 +168,76 @@ public Ventana() {
 			pnlBotones.removeAll();
 			getContentPane().repaint();
 		}
+		
+//		if(e.getKeyCode() == 87) {
+//			Component[] elementos = pnlBotones.getComponents();
+//			for(int i = 0; i <elementos.length; i++) {
+//				if(elementos[i].getClass().toString().equals("class javax.swing.JButton")) {
+//					JButton btn = ((JButton) elementos[i]);
+//					
+//					btn.setSize(btn.getWidth() + 10, btn.getHeight() + 10);
+//					getContentPane().repaint();
+//					getContentPane().revalidate();
+//				}
+//			}
+//		}
+		
 		if(e.getKeyCode() == 87) {
 			Component[] elementos = pnlBotones.getComponents();
 			for(int i = 0; i <elementos.length; i++) {
 				if(elementos[i].getClass().toString().equals("class javax.swing.JButton")) {
 					JButton btn = ((JButton) elementos[i]);
 					
-					btn.setSize(btn.getWidth() + 10, btn.getHeight() + 10);
+					btn.setSize(btn.getWidth(), btn.getHeight());
+					btn.setLocation(btn.getX(), btn.getY() - 10);
 					getContentPane().repaint();
 					getContentPane().revalidate();
 				}
 			}
 		}
+		
+		if(e.getKeyCode() == 83) {
+			Component[] elementos = pnlBotones.getComponents();
+			for(int i = 0; i <elementos.length; i++) {
+				if(elementos[i].getClass().toString().equals("class javax.swing.JButton")) {
+					JButton btn = ((JButton) elementos[i]);
+					
+					btn.setSize(btn.getWidth(), btn.getHeight());
+					btn.setLocation(btn.getX(), btn.getY() + 10);
+					getContentPane().repaint();
+					getContentPane().revalidate();
+				}
+			}
+		}
+		
+		if(e.getKeyCode() == 65) {
+			Component[] elementos = pnlBotones.getComponents();
+			for(int i = 0; i <elementos.length; i++) {
+				if(elementos[i].getClass().toString().equals("class javax.swing.JButton")) {
+					JButton btn = ((JButton) elementos[i]);
+					
+					btn.setSize(btn.getWidth(), btn.getHeight());
+					btn.setLocation(btn.getX() - 10, btn.getY());
+					getContentPane().repaint();
+					getContentPane().revalidate();
+				}
+			}
+		}
+		
+		if(e.getKeyCode() == 68) {
+			Component[] elementos = pnlBotones.getComponents();
+			for(int i = 0; i <elementos.length; i++) {
+				if(elementos[i].getClass().toString().equals("class javax.swing.JButton")) {
+					JButton btn = ((JButton) elementos[i]);
+					
+					btn.setSize(btn.getWidth(), btn.getHeight());
+					btn.setLocation(btn.getX() + 10, btn.getY());
+					getContentPane().repaint();
+					getContentPane().revalidate();
+				}
+			}
+		}
+		
 	}
 
 	@Override
